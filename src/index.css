@@ -8,7 +8,7 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #faf9ff;
+  background-color: #e5e7ea;
   @apply transition-colors duration-300;
   user-select: none;
 }
