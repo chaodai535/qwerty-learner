@@ -129,12 +129,12 @@ const App: React.FC = () => {
       {state.isFinished && <ResultScreen />}
       <Layout>
         <Header>
-          <Tooltip content="词典章节切换">
+          <Tooltip content="Dictionary chapter switch">
             <NavLink
-              className="block rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-indigo-400 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
+              className="block rounded-lg px-3 py-1 text-lg transition-colors duration-300 ease-in-out hover:bg-sky-300 hover:text-white focus:outline-none dark:text-white dark:text-opacity-60 dark:hover:text-opacity-100"
               to="/gallery"
             >
-              {currentDictInfo.name} 第 {currentChapter + 1} 章
+              {currentDictInfo.name} Chapter {currentChapter + 1}
             </NavLink>
           </Tooltip>
           <PronunciationSwitcher />
@@ -157,7 +157,7 @@ const App: React.FC = () => {
               {isLoading ? (
                 <div className="flex flex-col items-center justify-center ">
                   <div
-                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid  border-indigo-400 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid  border-sky-300 border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status"
                   ></div>
                 </div>

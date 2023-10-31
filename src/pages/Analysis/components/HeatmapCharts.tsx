@@ -29,7 +29,7 @@ const HeatmapCharts: FC<HeatmapChartsProps> = ({ data, title }) => {
         colorScheme={isOpenDarkMode ? 'dark' : 'light'}
         data={data}
         theme={{
-          light: ['#f0f0f0', '#6366f1'],
+          light: ['#f0f0f0', '#00B2FF'],
           dark: ['hsl(0, 0%, 22%)', '#818cf8'],
         }}
         renderBlock={(block, activity) =>

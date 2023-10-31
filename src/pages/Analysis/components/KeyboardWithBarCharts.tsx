@@ -98,7 +98,7 @@ const KeyboardWithBarCharts: FC<KeyboardWithBarChartsProps> = ({ data, title, su
         min: 0,
         max: myData[0].value,
         inRange: {
-          color: isOpenDarkMode ? ['hsl(0, 0%, 22%)', '#818cf8'] : ['#f0f0f0', '#6366f1'],
+          color: isOpenDarkMode ? ['hsl(0, 0%, 22%)', '#818cf8'] : ['#f0f0f0', '#00B2FF'],
         },
         text: ['多', '少'],
         textStyle: {
@@ -156,7 +156,7 @@ const KeyboardWithBarCharts: FC<KeyboardWithBarChartsProps> = ({ data, title, su
         data: myData.map(function (item) {
           return item.value
         }),
-        color: isOpenDarkMode ? '#818cf8' : '#6366f1',
+        color: isOpenDarkMode ? '#818cf8' : '#00B2FF',
         universalTransition: true,
       },
     }

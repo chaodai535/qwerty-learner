@@ -44,7 +44,7 @@ export default function RemarkRing({ remark, caption, percentage = null, size = 
     >
       {percentage !== null && (
         <div
-          className="absolute -inset-2 rounded-full border-8 border-indigo-400 bg-transparent dark:border-indigo-500"
+          className="absolute -inset-2 rounded-full border-8 border-sky-300 bg-transparent dark:border-sky-400"
           style={{ clipPath }}
           aria-hidden
         />

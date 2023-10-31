@@ -10,7 +10,7 @@ export const StickerButton = ({ className }: { className?: string }) => {
     <>
       <div
         data-tooltip-id="sticker-btn"
-        className={`w-max cursor-pointer rounded border-2 border-dashed border-gray-300 p-1.5 indent-0 text-sm font-bold text-gray-500 transition-all hover:border-indigo-500 hover:text-indigo-500
+        className={`w-max cursor-pointer rounded border-2 border-dashed border-gray-300 p-1.5 indent-0 text-sm font-bold text-gray-500 transition-all hover:border-sky-400 hover:text-sky-400
         dark:text-gray-300
         ${className}`}
       >

@@ -73,7 +73,7 @@ export default function DataSetting() {
                 value={exportProgress}
               >
                 <Progress.Indicator
-                  className="cubic-bezier(0.65, 0, 0.35, 1) h-full w-full bg-indigo-400 transition-transform duration-500 ease-out"
+                  className="cubic-bezier(0.65, 0, 0.35, 1) h-full w-full bg-sky-300 transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${100 - exportProgress}%)` }}
                 />
               </Progress.Root>
@@ -102,7 +102,7 @@ export default function DataSetting() {
                 value={importProgress}
               >
                 <Progress.Indicator
-                  className="cubic-bezier(0.65, 0, 0.35, 1) h-full w-full bg-indigo-400 transition-transform duration-500 ease-out"
+                  className="cubic-bezier(0.65, 0, 0.35, 1) h-full w-full bg-sky-300 transition-transform duration-500 ease-out"
                   style={{ transform: `translateX(-${100 - importProgress}%)` }}
                 />
               </Progress.Root>

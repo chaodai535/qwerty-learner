@@ -131,7 +131,7 @@ export default function ChapterList() {
                         </tbody>
                       </table>
                     </div>
-                    <button className="text-bold h-15 w-full bg-indigo-400 text-white" onClick={onConfirm}>
+                    <button className="text-bold h-15 w-full bg-sky-300 text-white" onClick={onConfirm}>
                       确定
                     </button>
                   </>

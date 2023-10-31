@@ -39,15 +39,13 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
         className={`${
           state.isTyping
             ? 'bg-gray-400 shadow-gray-200 dark:bg-gray-600  dark:shadow-none'
-            : 'bg-indigo-500 shadow-indigo-300 dark:shadow-indigo-500/60'
+            : 'bg-sky-400 shadow-indigo-300 dark:shadow-sky-400/60'
         } ${
           isShowReStartButton ? 'h-20' : 'h-auto'
         } flex-column absolute left-0 top-0 w-20 rounded-lg shadow-lg transition-colors duration-200`}
       >
         <button
-          className={`${
-            state.isTyping ? 'bg-gray-400  dark:bg-gray-700 dark:hover:bg-gray-500' : 'bg-indigo-500'
-          } my-btn-primary w-20 shadow`}
+          className={`${state.isTyping ? 'bg-gray-400  dark:bg-gray-700 dark:hover:bg-gray-500' : 'bg-sky-400'} my-btn-primary w-20 shadow`}
           type="button"
           onClick={onToggleIsTyping}
           aria-label={state.isTyping ? '暂停' : '开始'}
@@ -58,7 +56,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
           <div className="absolute bottom-0 flex w-20 justify-center" ref={refs.setFloating} {...getFloatingProps()}>
             <button
               className={`${
-                state.isTyping ? 'bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-500 ' : 'bg-indigo-400 '
+                state.isTyping ? 'bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-500 ' : 'bg-sky-300 '
               } my-btn-primary mb-1 mt-1 w-18  transition-colors duration-200`}
               type="button"
               onClick={onClickRestart}

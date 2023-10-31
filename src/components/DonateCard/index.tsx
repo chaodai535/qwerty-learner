@@ -26,7 +26,7 @@ export const DonateCard = () => {
   }, [])
 
   const HighlightedText = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-    return <span className={`font-bold  ${className ? className : 'text-indigo-500'}`}>{children}</span>
+    return <span className={`font-bold  ${className ? className : 'text-sky-400'}`}>{children}</span>
   }
 
   const onClickHasDonated = () => {
@@ -123,7 +123,7 @@ export const DonateCard = () => {
                     </p>
                     <p className="mx-auto px-4 indent-4">
                       Qwerty Learner 已经坚持 <span className="font-medium ">开放源码、无广告、无商业化</span> 运营
-                      <HighlightedText className="text-indigo-500"> {dayFromQwerty} </HighlightedText> 天，
+                      <HighlightedText className="text-sky-400"> {dayFromQwerty} </HighlightedText> 天，
                       我们的目标是为所有学习者提供一个高效、便捷、无干扰的学习环境。我们诚挚地邀请您考虑进行捐赠，捐赠将直接用于维持 Qwerty
                       的日常运营以及未来发展，让 Qwerty 与您一起成长。
                     </p>

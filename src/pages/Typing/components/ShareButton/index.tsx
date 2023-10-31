@@ -39,7 +39,7 @@ export default function ShareButton() {
         ref={refs.setReference}
         type="button"
         {...getReferenceProps()}
-        className="cursor-pointer text-xl text-indigo-400"
+        className="cursor-pointer text-xl text-sky-300"
         onClick={onClickShare}
         title="分享你的成绩给朋友"
       >

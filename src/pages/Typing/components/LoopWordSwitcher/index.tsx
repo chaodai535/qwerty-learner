@@ -27,8 +27,8 @@ export default function LoopWordSwitcher() {
       <Popover className="relative">
         <Popover.Button
           className={`p-[2px] ${
-            loopTimes === 1 ? 'text-gray-500' : 'text-indigo-500'
-          } rounded text-lg hover:bg-indigo-400 hover:text-white focus:outline-none `}
+            loopTimes === 1 ? 'text-gray-500' : 'text-sky-400'
+          } rounded text-lg hover:bg-sky-300 hover:text-white focus:outline-none `}
           type="button"
           onClick={(e) => {
             setIsOpen(!isOpen)
@@ -71,7 +71,7 @@ export default function LoopWordSwitcher() {
                     {loopOptions.map((value, index) => (
                       <div className="flex w-full items-center" key={value}>
                         <RadioGroup.Item
-                          className="h-[25px] w-[25px] cursor-pointer rounded-full bg-white shadow-[0_2px_10px]  shadow-gray-300 outline-none hover:bg-indigo-100"
+                          className="h-[25px] w-[25px] cursor-pointer rounded-full bg-white shadow-[0_2px_10px]  shadow-gray-300 outline-none hover:bg-sky-100"
                           value={value.toString()}
                           onClick={() => onChangeLoopTimes(value)}
                           id={`r${index}`}

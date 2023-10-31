@@ -70,7 +70,7 @@ export default function StarCard() {
               </div>
             </div>
             <span className="w-full text-center text-gray-600 dark:text-gray-300">
-              收藏快捷键？/？？？<span className="ml-2 text-indigo-600 dark:text-indigo-500">{IS_MAC_OS ? '⌘' : 'Ctrl'} + D</span>
+              收藏快捷键？/？？？<span className="ml-2 text-indigo-600 dark:text-sky-400">{IS_MAC_OS ? '⌘' : 'Ctrl'} + D</span>
             </span>
           </div>
         ) : (
@@ -110,7 +110,7 @@ export default function StarCard() {
             </span>
           )}
           <button type="button" onClick={onClickCloseStar} title="关闭提示" aria-label="关闭提示">
-            <IconCircleX className="h-5 w-5 text-indigo-400" />
+            <IconCircleX className="h-5 w-5 text-sky-300" />
           </button>
         </div>
         <span className="pb-4 text-xl text-gray-600 dark:text-gray-50">

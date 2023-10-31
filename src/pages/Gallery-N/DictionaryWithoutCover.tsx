@@ -32,7 +32,7 @@ export default function DictionaryComponent({ dictionary, onClick }: Props) {
     <div
       ref={divRef}
       className={`group flex  h-36 w-80 cursor-pointer items-center justify-center overflow-hidden rounded-lg p-4 text-left shadow-lg focus:outline-none ${
-        isSelected ? 'bg-indigo-400' : 'bg-zinc-50 hover:bg-white dark:bg-gray-800 dark:hover:bg-gray-700'
+        isSelected ? 'bg-sky-300' : 'bg-zinc-50 hover:bg-white dark:bg-gray-800 dark:hover:bg-gray-700'
       }`}
       role="button"
       onClick={onClick}
@@ -40,7 +40,7 @@ export default function DictionaryComponent({ dictionary, onClick }: Props) {
       <div className="relative ml-1 mt-2 flex h-full w-full flex-col items-start justify-start">
         <h1
           className={`mb-1.5 text-xl font-normal  ${
-            isSelected ? 'text-white' : 'text-gray-800 group-hover:text-indigo-400 dark:text-gray-200'
+            isSelected ? 'text-white' : 'text-gray-800 group-hover:text-sky-300 dark:text-gray-200'
           }`}
         >
           {dictionary.name}
@@ -57,10 +57,10 @@ export default function DictionaryComponent({ dictionary, onClick }: Props) {
             <Progress.Root
               value={progress}
               max={100}
-              className={`mr-4 h-2 w-full rounded-full border  bg-white ${isSelected ? 'border-indigo-600' : 'border-indigo-400'}`}
+              className={`mr-4 h-2 w-full rounded-full border  bg-white ${isSelected ? 'border-indigo-600' : 'border-sky-300'}`}
             >
               <Progress.Indicator
-                className={`h-full rounded-full pl-0 ${isSelected ? 'bg-indigo-600' : 'bg-indigo-400'}`}
+                className={`h-full rounded-full pl-0 ${isSelected ? 'bg-indigo-600' : 'bg-sky-300'}`}
                 style={{ width: `calc(${progress}% )` }}
               />
             </Progress.Root>

@@ -266,7 +266,7 @@ export default function SoundSetting() {
                                     e.stopPropagation()
                                     onPlayKeySound(keySoundResource)
                                   }}
-                                  className="mr-2  hidden cursor-pointer text-neutral-500 hover:text-indigo-400 group-hover:block dark:text-neutral-300"
+                                  className="mr-2  hidden cursor-pointer text-neutral-500 hover:text-sky-300 group-hover:block dark:text-neutral-300"
                                 />
                               </div>
                             </>

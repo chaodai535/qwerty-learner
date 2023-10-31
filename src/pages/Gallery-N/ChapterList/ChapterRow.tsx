@@ -29,7 +29,7 @@ export default function ChapterRow({ index, dictID, checked, onChange }: Chapter
 
   return (
     <tr
-      className="flex cursor-pointer even:bg-gray-50 hover:bg-indigo-100 dark:bg-gray-800 dark:even:bg-gray-700 dark:hover:bg-gray-600"
+      className="flex cursor-pointer even:bg-gray-50 hover:bg-sky-100 dark:bg-gray-800 dark:even:bg-gray-700 dark:hover:bg-gray-600"
       ref={rowRef}
       onClick={() => onChange(index)}
     >
