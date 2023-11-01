@@ -12,6 +12,7 @@ export const initialState: TypingState = {
     wordCount: 0,
     correctCount: 0,
     wrongCount: 0,
+    tempwrongCount: 0,
     wordRecordIds: [],
     userInputLogs: [],
   },
@@ -42,6 +43,7 @@ export enum TypingStateActionType {
   TOGGLE_IS_TYPING = 'TOGGLE_IS_TYPING',
   REPORT_WRONG_WORD = 'REPORT_WRONG_WORD',
   REPORT_CORRECT_WORD = 'REPORT_CORRECT_WORD',
+  REPORT_WRONG_LETTER = 'REPORT_WRONG_LETTER',
   NEXT_WORD = 'NEXT_WORD',
   LOOP_CURRENT_WORD = 'LOOP_CURRENT_WORD',
   FINISH_CHAPTER = 'FINISH_CHAPTER',
@@ -65,6 +67,7 @@ export type TypingStateAction =
   | { type: TypingStateActionType.SET_IS_TYPING; payload: boolean }
   | { type: TypingStateActionType.TOGGLE_IS_TYPING }
   | { type: TypingStateActionType.REPORT_WRONG_WORD; payload: { letterMistake: LetterMistakes } }
+  | { type: TypingStateActionType.REPORT_WRONG_LETTER; payload: { letterMistake: LetterMistakes } }
   | { type: TypingStateActionType.REPORT_CORRECT_WORD }
   | { type: TypingStateActionType.NEXT_WORD }
   | { type: TypingStateActionType.LOOP_CURRENT_WORD }
@@ -92,17 +95,21 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
       state.isShowSkip = action.payload
       break
     case TypingStateActionType.SET_IS_TYPING:
-      state.isTyping = action.payload
+      state.isTyping = true // action.payload
       break
 
     case TypingStateActionType.TOGGLE_IS_TYPING:
-      state.isTyping = !state.isTyping
+      state.isTyping = true // !state.isTyping
       break
     case TypingStateActionType.REPORT_CORRECT_WORD: {
       state.chapterData.correctCount += 1
 
       const wordLog = state.chapterData.userInputLogs[state.chapterData.index]
       wordLog.correctCount += 1
+      break
+    }
+    case TypingStateActionType.REPORT_WRONG_LETTER: {
+      state.chapterData.tempwrongCount += 1
       break
     }
     case TypingStateActionType.REPORT_WRONG_WORD: {
@@ -125,14 +132,14 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
       break
     case TypingStateActionType.FINISH_CHAPTER:
       state.chapterData.wordCount += 1
-      state.isTyping = false
+      state.isTyping = true // false
       state.isFinished = true
       state.isShowSkip = false
       break
     case TypingStateActionType.SKIP_WORD: {
       const newIndex = state.chapterData.index + 1
       if (newIndex >= state.chapterData.words.length) {
-        state.isTyping = false
+        state.isTyping = true // false
         state.isFinished = true
       } else {
         state.chapterData.index = newIndex
@@ -143,7 +150,7 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
     case TypingStateActionType.SKIP_2_WORD_INDEX: {
       const newIndex = action.newIndex
       if (newIndex >= state.chapterData.words.length) {
-        state.isTyping = false
+        state.isTyping = true // false
         state.isFinished = true
       }
       state.chapterData.index = newIndex
@@ -152,7 +159,7 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
     case TypingStateActionType.REPEAT_CHAPTER: {
       const newState = structuredClone(initialState)
       newState.chapterData.userInputLogs = state.chapterData.words.map((_, index) => ({ ...structuredClone(initialUserInputLog), index }))
-      newState.isTyping = true
+      newState.isTyping = true // true
       newState.chapterData.words = action.shouldShuffle ? shuffle(state.chapterData.words) : state.chapterData.words
       newState.isTransVisible = state.isTransVisible
       return newState
@@ -160,7 +167,7 @@ export const typingReducer = (state: TypingState, action: TypingStateAction) => 
     case TypingStateActionType.NEXT_CHAPTER: {
       const newState = structuredClone(initialState)
       newState.chapterData.userInputLogs = state.chapterData.words.map((_, index) => ({ ...structuredClone(initialUserInputLog), index }))
-      newState.isTyping = true
+      newState.isTyping = true // true
       newState.isTransVisible = state.isTransVisible
       return newState
     }

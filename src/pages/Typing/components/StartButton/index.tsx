@@ -32,7 +32,7 @@ export default function StartButton({ isLoading }: { isLoading: boolean }) {
   const { getReferenceProps, getFloatingProps } = useInteractions([hoverButton])
 
   return (
-    <Tooltip content="快捷键 Enter" className="box-content h-7 w-8 px-6 py-1">
+    <Tooltip content="Shortcut key Enter" className="box-content h-7 w-8 px-6 py-1">
       <div
         ref={refs.setReference}
         {...getReferenceProps()}

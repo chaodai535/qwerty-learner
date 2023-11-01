@@ -31,11 +31,11 @@ export default function Translation({ trans }: TranslationProps) {
       >
         {trans}
       </span>
-      {isShowTransRead && (
+      {/* {isShowTransRead && (
         <Tooltip content="朗读释义" className="ml-3 h-5 w-5 cursor-pointer leading-7">
           <SoundIcon animated={speaking} onClick={handleClickSoundIcon} className="h-5 w-5" />
         </Tooltip>
-      )}
+      )} */}
     </div>
   )
 }

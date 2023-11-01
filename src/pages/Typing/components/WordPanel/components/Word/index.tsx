@@ -178,10 +178,9 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
     }
 
     if (isEqual) {
-      // 输入正确时
+      // // 输入正确时
       setWordState((state) => {
         state.letterTimeArray.push(Date.now())
-        state.correctCount += 1
       })
 
       if (inputLength >= wordState.displayWord.length) {
@@ -190,16 +189,16 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
           state.letterStates[inputLength - 1] = 'correct'
           state.isFinished = true
           state.endTime = getUtcStringForMixpanel()
+          state.correctCount += 1
         })
         playHintSound()
+        dispatch({ type: TypingStateActionType.REPORT_CORRECT_WORD })
       } else {
         setWordState((state) => {
           state.letterStates[inputLength - 1] = 'correct'
         })
         playKeySound()
       }
-
-      dispatch({ type: TypingStateActionType.REPORT_CORRECT_WORD })
     } else {
       // 出错时
       playBeepSound()
@@ -207,7 +206,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
         state.letterStates[inputLength - 1] = 'wrong'
         state.hasWrong = true
         state.hasMadeInputWrong = true
-        state.wrongCount += 1
+        state.letterWrongCount += 1
         state.letterTimeArray = []
 
         if (state.letterMistake[inputLength - 1]) {
@@ -217,7 +216,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
         }
 
         const currentState = JSON.parse(JSON.stringify(state))
-        dispatch({ type: TypingStateActionType.REPORT_WRONG_WORD, payload: { letterMistake: currentState.letterMistake } })
+        dispatch({ type: TypingStateActionType.REPORT_WRONG_LETTER, payload: { letterMistake: currentState.letterMistake } })
       })
 
       if (currentChapter === 0 && state.chapterData.index === 0 && wordState.wrongCount >= 3) {
@@ -285,7 +284,7 @@ export default function WordComponent({ word, onFinish }: { word: Word; onFinish
           className={`tooltip-info relative w-fit bg-transparent p-0 leading-normal shadow-none dark:bg-transparent ${
             wordDictationConfig.isOpen ? 'tooltip' : ''
           }`}
-          data-tip="按 Tab 快捷键显示完整单词"
+          data-tip="按 Tab Shortcut key显示完整单词"
         >
           <div
             onMouseEnter={() => handleHoverWord(true)}

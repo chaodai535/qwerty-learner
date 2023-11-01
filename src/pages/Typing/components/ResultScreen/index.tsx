@@ -245,7 +245,7 @@ const ResultScreen = () => {
               </div>
             </div>
             <div className="mt-10 flex w-full justify-center gap-5 px-5 text-xl">
-              <Tooltip content="快捷键：shift + enter">
+              <Tooltip content="Shortcut key：shift + enter">
                 <button
                   className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                   type="button"
@@ -255,7 +255,7 @@ const ResultScreen = () => {
                   默写本章节
                 </button>
               </Tooltip>
-              <Tooltip content="快捷键：space">
+              <Tooltip content="Shortcut key：space">
                 <button
                   className="my-btn-primary h-12 border-2 border-solid border-gray-300 bg-white text-base text-gray-700 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700"
                   type="button"
@@ -266,7 +266,7 @@ const ResultScreen = () => {
                 </button>
               </Tooltip>
               {!isLastChapter && (
-                <Tooltip content="快捷键：enter">
+                <Tooltip content="Shortcut key：enter">
                   <button
                     className={`{ isLastChapter ? 'cursor-not-allowed opacity-50' : ''} my-btn-primary h-12 text-base font-bold `}
                     type="button"

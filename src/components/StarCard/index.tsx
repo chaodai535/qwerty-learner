@@ -70,7 +70,7 @@ export default function StarCard() {
               </div>
             </div>
             <span className="w-full text-center text-gray-600 dark:text-gray-300">
-              收藏快捷键？/？？？<span className="ml-2 text-indigo-600 dark:text-sky-400">{IS_MAC_OS ? '⌘' : 'Ctrl'} + D</span>
+              收藏Shortcut key<span className="ml-2 text-indigo-600 dark:text-sky-400">{IS_MAC_OS ? '⌘' : 'Ctrl'} + D</span>
             </span>
           </div>
         ) : (
@@ -81,7 +81,7 @@ export default function StarCard() {
               onClick={onClickWantStar}
               title="我想收藏"
             >
-              我想收藏/？/？？？
+              我想收藏
             </button>
           </div>
         )}

@@ -12,6 +12,7 @@ export type WordState = {
   hasMadeInputWrong: boolean
   // 用户输入错误的次数
   wrongCount: number
+  letterWrongCount: number
   startTime: string
   endTime: string
   inputCount: number
@@ -30,6 +31,7 @@ export const initialWordState: WordState = {
   hasWrong: false,
   hasMadeInputWrong: false,
   wrongCount: 0,
+  letterWrongCount: 0,
   startTime: '',
   endTime: '',
   inputCount: 0,

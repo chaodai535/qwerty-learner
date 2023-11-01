@@ -58,7 +58,7 @@ export default function Drawer(props: DrawerProps) {
                 'absolute flex h-full w-[35rem] flex-col drop-shadow-2xl transition-all duration-300 ease-out',
               )}
             >
-              {children} ？/？？？
+              {children}
             </Dialog.Panel>
           </Transition.Child>
         </div>

@@ -1,6 +1,7 @@
 import { TypingContext, TypingStateActionType } from '../../store'
 import PrevAndNextWord from '../PrevAndNextWord'
 import Progress from '../Progress'
+import RecognizeOrNotButton from '../RecognizeOrNotButton'
 import Phonetic from './components/Phonetic'
 import Translation from './components/Translation'
 import WordComponent from './components/Word'
@@ -121,7 +122,16 @@ export default function WordPanel() {
             </div>
           </div>
         )}
+        <div className="container relative flex h-36 w-full justify-center">
+          {state.isTyping && (
+            <div className="flex items-center justify-center pb-1 pt-4">
+              <RecognizeOrNotButton type="recognize" classname="mr-2" />
+              <RecognizeOrNotButton type="unrecognizable" classname="ml-2" />
+            </div>
+          )}
+        </div>
       </div>
+
       <Progress className={`mb-10 mt-auto ${state.isTyping ? 'opacity-100' : 'opacity-0'}`} />
     </div>
   )
